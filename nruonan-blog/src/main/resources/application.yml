@@ -1,0 +1,32 @@
+server:
+  port: 7777
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sg_blog
+    username: root
+    password: feiwu
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 5MB
+  redis:
+    port: 6379
+    url: redis://123123@192.168.255.130:6379
+    password: 123123
+mybatis-plus:
+  configuration:
+     #日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: delFlag
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      id-type: auto
+# 打开七牛云，找到密钥管理，把相关信息填写到下面3行，会被nruonan-blog工程的OOSTest类获取
+
+oss:
+  accessKey: wyEqV9aSxOZU0wRnDKWJw_zRqAwXRV47EeCmIrtB
+  secretKey: 7rgUg4h3JXSnDMV8VNH2oR5K6zREX4POeOgU7OYC
+  bucket: nnn-blog
